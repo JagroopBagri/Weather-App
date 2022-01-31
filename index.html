@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+<body>
+    <div class="Container">
+        <section class="searchbar/light-dark-mode">
+            <form>
+                <input type="text" id="location" name="location" maxlength="100" placeholder="Search Location..." value="East Bernard">
+            </form>
+            <button type="button">Search</button>
+        </section>
+        <section class="description-of-weather">
+            <div class='brief-description'>
+                description of weather
+            </div>
+        </section>
+        <section class="current-weather-details">
+            <div class="main-icon">
+                <img class="todays-weather-icon bigicon" src="images/sunny.png">
+            </div>
+            <div class="main-temp">
+                <div class="todays-temp">75°</div>
+                <div class="todays-min-max">60°/ 75°</div>
+            </div>
+            <div class="additional-data">
+                <div class="wind-data">
+                    <img class="wind-data-icon smallicon" src="images/windLevel.png">
+                    <div class="wind-data-text">5mph</div>
+                </div>
+                <div class="rain-data">
+                    <img class="rain-data-icon smallicon" src="images/umbrella.png">
+                    <div class="rain-data-text">0%</div>
+                </div>
+                <div class="humidity-data">
+                    <img class="humidity-data-icon smallicon" src="images/humidity.png">
+                    <div class="humidity-data-text">40%</div>
+                </div>
+            </div>
+        </section>
+        <section class="4-day-forecast">
+            <div class='day1'>
+                <img class ="day1image" src="images/snowy.png">
+                <div class="day1-min-max">60°/75°</div>
+                <div class='day1-date'>TOM</div>
+            </div>
+            <div class='day2'>
+                <img class ="day2image" src="images/snowy.png">
+                <div class="day2-min-max">60°/75°</div>
+                <div class='day2-date'>MON</div>
+            </div>
+            <div class='day3'>
+                <img class ="day3image" src="images/snowy.png">
+                <div class="day3-min-max">60°/75°</div>
+                <div class='day3-date'>TUE</div>
+            </div>
+            <div class='day4'>
+                <img class ="day4image" src="images/snowy.png">
+                <div class="day4-min-max">60°/75°</div>
+                <div class='day4-date'>WED</div>
+            </div>
+        </section>
+        <section class="temp-conversion">
+
+        </section>
+
+    </div>
+</body>
+</html>

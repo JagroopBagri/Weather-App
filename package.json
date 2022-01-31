@@ -1,0 +1,23 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "A simple weather app",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JagroopBagri/Weather-App.git"
+  },
+  "author": "Jagroop Bagri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JagroopBagri/Weather-App/issues"
+  },
+  "homepage": "https://github.com/JagroopBagri/Weather-App#readme",
+  "devDependencies": {
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
