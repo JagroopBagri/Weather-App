@@ -44,6 +44,8 @@ function startApp(){
     const day3WeatherIcon = document.querySelector(".day3image");
     // day4 weather icon
     const day4WeatherIcon = document.querySelector(".day4image");
+    // retrieve location from localStorage
+    const storedInput = localStorage.getItem('location');
 
 
     // function that retrieves weather data and appends it to the DOM
@@ -51,8 +53,12 @@ function startApp(){
    
         // Attempt to fetch data 
         try{
+            // make location last stored input
+            if(storedInput && searchBar.value === ''){
+                searchBar.value = storedInput;
+            }
             // check to see if searchbar has a value
-            if(searchBar.value === '' || searchBar.value === undefined){
+            else if(searchBar.value === '' || searchBar.value === undefined){
                 searchBar.value = "San Francisco";
             }
             // retrieve data from API
@@ -67,6 +73,9 @@ function startApp(){
             // convert forecast response to JSON
             const forecastData = await forecastResponse.json();
 
+            // save location to local storage
+            localStorage.setItem('location', searchBar.value);
+
             // probability of precipitation
             const probablityOfRain = forecastData.daily[0].pop;
             // append probability of precipitation
@@ -77,6 +86,19 @@ function startApp(){
             // main weather description 
             const mainWeatherDescription = weatherData.weather[0].main;
             const mainDetailedDescriptionID = weatherData.weather[0].id;
+
+            //Change location name to proper capitalization in case the user didn't
+            let words = searchBar.value.split(" ");
+            // get capitalized location from IIFE
+            let capitalizedLocation = (function(){
+                let location = '';
+                words.forEach(word => {
+                let w = ' '+ word[0].toUpperCase() + word.substr(1);
+                location += w;
+                })
+                return location;
+            })();
+            console.log(capitalizedLocation);
             // function that appends weather description
             const appendCurrentWeatherDescription = function(){
                 let description = "it's clear.";
@@ -95,6 +117,9 @@ function startApp(){
                 else if (mainWeatherDescription === "Rain"){
                     description = "it's raining.";
                 }
+                else if (mainWeatherDescription === "Mist"){
+                    description = "it's misty";
+                }
                 else if (mainWeatherDescription === "Drizzle"){
                     description = "there's light rain.";
                 }
@@ -105,7 +130,7 @@ function startApp(){
                     description = "it's snowing.";
                 }
             // append weather description
-            todaysDescriptionDiv.textContent = `Currently in ${searchBar.value}, ${description}`;
+            todaysDescriptionDiv.textContent = `Currently in${capitalizedLocation}, ${description}`;
             };
             // invoke appendCurrentWeatherDesciption function
             appendCurrentWeatherDescription();
@@ -367,7 +392,9 @@ function startApp(){
     getAndAppendWeatherInfo();
 
     // Add event listener to search button
-    searchButton.addEventListener('click', getAndAppendWeatherInfo);
+    searchButton.addEventListener('click', function(){
+        getAndAppendWeatherInfo();
+    });
     // add event listener to enter key being pressed
     searchBar.addEventListener('keypress', event => {
         if (event.key === "Enter"){
