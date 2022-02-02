@@ -4,13 +4,13 @@
     font-size: 1rem;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    color: rgb(152, 124, 214);
+    color: rgb(138, 111, 197);
     border-color: rgb(107, 82, 163);
     font-weight: bold;
 }
 body{
-    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 1px;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -28,12 +28,12 @@ body{
     flex-direction: column;
     align-items: center;
     gap: 1px;
-    overflow: hidden;
+    overflow: auto;
 }
 .searchbar-light-dark-mode{
     display: flex;
     width: 90%;
-    gap: 1%;
+    gap: 3%;
     justify-content: center;
 }
 form{
@@ -43,7 +43,6 @@ form{
 #location{
     border-style: solid;
     width: 100%;
-    height: 100%;
     padding: 3px;
     border-radius: 10px;
     text-align: center;
@@ -51,18 +50,18 @@ form{
     border-color: black;
 }
 .description-of-weather{
-    margin-top: 6%;
+    margin-top: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 90%;
-    margin-bottom: 6%;
+    margin-bottom: 5%;
 }
 .brief-description{
     width: 85%;
     text-align:center;
     font-size: 1.8rem;
-    font-style: italic;
+    font-family:'Lucida Sans', Arial, sans-serif;
 }
 .current-weather-details{
     width: 95%;
@@ -70,7 +69,7 @@ form{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 3%;
+    margin-bottom: 4%;
     gap: 4%;
 }
 .main-icon{
@@ -145,7 +144,7 @@ form{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: 3%;
+    margin-bottom: 1%;
 }
 .forecasticon{
     width: 30%;
@@ -159,12 +158,13 @@ form{
 }
 .temp-conversion{
     width: 15%;
-    height: 15%;
+    height: 10%;
+    min-height: 60px;
+    min-width: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    overflow: hidden;
 }
 #fahrenheit{
     margin-right: 6%;
@@ -188,7 +188,31 @@ form{
 .searchButton:hover{
     cursor: pointer;
 }
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+    width:250px;
+}
+.footer{
+    font-weight: normal;
+    font-size: .8rem;
+    color: black;
+}
+footer, p, a, img{
+    background-color: transparent;
+}
 
+.fa-github {
+    color: black;
+    font-size: 24px;
+    transition: transform 0.2s ease-in-out;
+}
+    
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.3);
+}
 /*
 img{
     filter:contrast(150%);

@@ -513,7 +513,7 @@ function startApp(){
             const minTemp = weatherData.main.temp_min;
             const maxTemp = weatherData.main.temp_max;
             // append min and max temps to DOM (round the temp and add degree symbol)
-            minMaxDiv.textContent = Math.round(minTemp) + "°" + " / " + Math.round(maxTemp) + "°";
+            minMaxDiv.textContent = "Low: " + Math.round(minTemp) + "°" + " / " + "High: " + Math.round(maxTemp) + "°";
             // wind speed
             const windSpeed = Math.round(weatherData.wind.speed * 10)/10;
             // append wind speed
@@ -823,5 +823,9 @@ function startApp(){
 
         }
     })
+    // Insert footer with updating year
+const footer = document.querySelector('.footer')
+const currentYear = new Date().getFullYear();
+footer.textContent = 'Copyright © ' + currentYear + ' Jagroop Bagri'
 }
 startApp();
