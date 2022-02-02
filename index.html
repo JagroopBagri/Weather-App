@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
 <body>
     <div class="Container">
-        <section class="searchbar/light-dark-mode">
+        <section class="searchbar-light-dark-mode">
             <form>
                 <input type="text" id="location" name="location" maxlength="100" placeholder="Search City...">
             </form>
@@ -17,55 +17,58 @@
         </section>
         <section class="description-of-weather">
             <div class='brief-description'>
-                description of weather
+                
             </div>
         </section>
         <section class="current-weather-details">
             <div class="main-icon">
-                <img class="todays-weather-icon bigicon" src="images/sunny.png">
+                <img class="todays-weather-icon bigicon">
             </div>
             <div class="main-temp">
-                <div class="todays-temp">75°</div>
-                <div class="todays-min-max">60°/ 75°</div>
+                <div class="todays-temp" title="Todays Temp">-</div>
+                <div class="todays-min-max" title="Todays Min and Max Temp">-</div>
             </div>
             <div class="additional-data">
                 <div class="wind-data">
                     <img class="wind-data-icon smallicon" src="images/windLevel.png">
-                    <div class="wind-data-text">5mph</div>
+                    <div class="wind-data-text" title="Wind Speed">-</div>
                 </div>
                 <div class="rain-data">
                     <img class="rain-data-icon smallicon" src="images/umbrella.png">
-                    <div class="rain-data-text">0%</div>
+                    <div class="rain-data-text" title="Chance of Rain">-</div>
                 </div>
                 <div class="humidity-data">
                     <img class="humidity-data-icon smallicon" src="images/humidity.png">
-                    <div class="humidity-data-text">40%</div>
+                    <div class="humidity-data-text" title="Humidity Percentage">-</div>
                 </div>
             </div>
         </section>
-        <section class="4-day-forecast">
+        <section class="four-day-forecast">
             <div class='day1'>
-                <img class ="day1image" src="images/snow.png">
-                <div class="day1-min-max">60°/75°</div>
-                <div class='day1-date'>TOM</div>
+                <img class ="day1image forecasticon">
+                <div class="day1-min-max forecastminmax" title="Min and Max Temp">-</div>
+                <div class='day1-date forecastdate''>TOM</div>
             </div>
             <div class='day2'>
-                <img class ="day2image" src="images/snow.png">
-                <div class="day2-min-max">60°/75°</div>
-                <div class='day2-date'>MON</div>
+                <img class ="day2image forecasticon">
+                <div class="day2-min-max forecastminmax" title="Min and Max Temp">-</div>
+                <div class='day2-date forecastdate''>-</div>
             </div>
             <div class='day3'>
-                <img class ="day3image" src="images/snow.png">
-                <div class="day3-min-max">60°/75°</div>
-                <div class='day3-date'>TUE</div>
+                <img class ="day3image forecasticon">
+                <div class="day3-min-max forecastminmax" title="Min and Max Temp">-</div>
+                <div class='day3-date forecastdate''>-</div>
             </div>
             <div class='day4'>
-                <img class ="day4image" src="images/snow.png">
-                <div class="day4-min-max">60°/75°</div>
-                <div class='day4-date'>WED</div>
+                <img class ="day4image forecasticon">
+                <div class="day4-min-max forecastminmax" title="Min and Max Temp">-</div>
+                <div class='day4-date forecastdate'>-</div>
             </div>
         </section>
         <section class="temp-conversion">
+            <div class = 'fahrenheit'>°F</div>
+            <div class='separator'>|</div>
+            <div class='celsius'>°C</div>
 
         </section>
 
