@@ -45,9 +45,24 @@ function startApp(){
     // day4 weather icon
     const day4WeatherIcon = document.querySelector(".day4image");
     // fahrenheit div
-    const fahrenheitDiv = document.querySelector('.fahrenheit');
+    const fahrenheitDiv = document.querySelector('#fahrenheit');
     // celsius div
-    const celsiusDiv = document.querySelector('.celsius');
+    const celsiusDiv = document.querySelector('#celsius');
+    // retrieve grayed item from localStorage
+    let storedFahrenheitColor = localStorage.getItem("f-color");
+    let storedCelsiusColor = localStorage.getItem("c-color");
+    // store which unit it grayed out and which isnt
+    if(storedFahrenheitColor){
+        fahrenheitDiv.classList.toggle(storedFahrenheitColor);
+    }
+    if(storedCelsiusColor){
+        celsiusDiv.classList.toggle(storedCelsiusColor);
+    }
+    else{
+        celsiusDiv.classList.add("gray");
+        localStorage.setItem("f-color", "color");
+        localStorage.setItem("c-color", "gray");
+    }
     // retrieve location from localStorage
     let storedInput = localStorage.getItem('location');
     // retrieve temp format from localstorage
@@ -156,7 +171,7 @@ function startApp(){
             const minTemp = weatherData.main.temp_min;
             const maxTemp = weatherData.main.temp_max;
             // append min and max temps to DOM (round the temp and add degree symbol)
-            minMaxDiv.textContent = Math.round(minTemp) + "°" + " / " + Math.round(maxTemp) + "°";
+            minMaxDiv.textContent = "Low: " + Math.round(minTemp) + "°" + " / " + "High: " + Math.round(maxTemp) + "°";
             // wind speed
             const windSpeed = Math.round(weatherData.wind.speed * 10)/ 10;
             // append wind speed
@@ -775,6 +790,12 @@ function startApp(){
             return;
         }
         else{
+            storedFahrenheitColor = localStorage.getItem("f-color");
+            fahrenheitDiv.classList.toggle(storedFahrenheitColor);
+            localStorage.setItem("c-color", "gray");
+            localStorage.setItem("f-color", "color");
+            storedCelsiusColor = localStorage.getItem("c-color");
+            celsiusDiv.classList.toggle(storedCelsiusColor)
             imperial = 'true';
             // save format to local storage
             localStorage.setItem('conversion', imperial);
@@ -788,6 +809,12 @@ function startApp(){
             return;
         }
         else{
+            storedCelsiusColor = localStorage.getItem("c-color");
+            celsiusDiv.classList.toggle(storedCelsiusColor);
+            localStorage.setItem("c-color", "color");
+            localStorage.setItem("f-color", "gray");
+            storedFahrenheitColor = localStorage.getItem("f-color");
+            fahrenheitDiv.classList.toggle(storedFahrenheitColor)
             imperial = 'false';
             // save format to local storage
             localStorage.setItem('conversion', imperial);
