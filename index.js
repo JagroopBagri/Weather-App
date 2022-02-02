@@ -109,7 +109,6 @@ function startApp(){
             const probablityOfRain = forecastData.daily[0].pop;
             // append probability of precipitation
             chanceOfRainDiv.textContent = Math.round(probablityOfRain * 100) + '%';
-            console.log(weatherData);
 
 
             // main weather description 
@@ -180,7 +179,6 @@ function startApp(){
             const humidityLevel = weatherData.main.humidity;
             // append humidity
             humidityDiv.textContent = Math.round(humidityLevel) + "%";
-            console.log(forecastData);
             
             // 4 day forecast 
         
@@ -451,7 +449,6 @@ function startApp(){
             const probablityOfRain = forecastData.daily[0].pop;
             // append probability of precipitation
             chanceOfRainDiv.textContent = Math.round(probablityOfRain * 100) + '%';
-            console.log(weatherData);
 
 
             // main weather description 
@@ -522,7 +519,6 @@ function startApp(){
             const humidityLevel = weatherData.main.humidity;
             // append humidity
             humidityDiv.textContent = Math.round(humidityLevel) + "%";
-            console.log(forecastData);
             
             // 4 day forecast 
         
