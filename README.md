@@ -4,7 +4,7 @@
 
 Clean application to display weather data using OpenWeatherMap API
 
-> See it live on [jagroopbagri.github.io/weather-app](https://jagroopbagri.github.io/weather-app/)
+> See it live on [jagroopbagri.github.io/Weather-App](https://jagroopbagri.github.io/Weather-App/)
 
 ## Objectives
 
